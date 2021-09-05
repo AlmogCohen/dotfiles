@@ -16,10 +16,16 @@ unsetopt nomatch
 export PS1=$'\n'"%F{green} %*%F %3~ %F{white}"$'\n'"$ "
 
 # Enable plugins.
-plugins=(git brew history kubectl history-substring-search)
+plugins=(git pip python brew history kubectl history-substring-search)
 
 # Custom $PATH with extra locations.
 export PATH=$HOME/Library/Python/3.8/bin:/opt/homebrew/bin:/usr/local/bin:/usr/local/sbin:$HOME/bin:$HOME/go/bin:/usr/local/git/bin:$HOME/.composer/vendor/bin:$PATH
+
+# Setup the nvm installation stuff
+mkdir -p $HOME/.nvm
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Bash-style time output.
 export TIMEFMT=$'\nreal\t%*E\nuser\t%*U\nsys\t%*S'
